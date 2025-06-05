@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFG</title>
+  <link rel="stylesheet" href="css/principal.css">
+</head>
+<body>
+  <header>
+    <h1>🌿 Projeto Eco FG</h1>
+    <nav>
+      <a href="login.html">Login</a> <a href="cadastro.html">Cadastro</a> <a href="#reciclagem">Calculadora</a>
+      <a href="#info-ecologica">Dicas Eco</a>
+      <a href="#lixeiras-reciclagem">Coleta Seletiva</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="reciclagem">
+      <h2>Calcule sua Reciclagem</h2>
+      <form onsubmit="calcularValor(); return false;">
+        <label for="material">Tipo de material:</label>
+        <select id="material">
+          <option value="plastico">Plástico</option>
+          <option value="vidro">Vidro</option>
+          <option value="metal">Metal</option>
+          <option value="papelao">Papelão</option>
+          <option value="cobre">Cobre</option>
+          <option value="biodegradavel">Biodegradável</option>
+        </select>
+
+        <label for="quantidade">Quantidade (kg):</label>
+        <input type="number" id="quantidade" min="0.1" step="0.1" placeholder="Ex: 2.5" required>
+
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="resultado"></div>
+    </section>
+
+    <section id="info-ecologica">
+      <h2>Dicas Ecológicas para um Futuro Sustentável</h2>
+      <div class="info-container">
+        <article class="dica-eco">
+          <h3>♻️ Reduza, Reutilize, Recicle</h3>
+          <p>Lembre-se dos 3 Rs! Reduza o consumo, reutilize o que puder e separe corretamente os resíduos para a reciclagem. Pequenas ações geram grandes impactos!</p>
+        </article>
+        <article class="dica-eco">
+          <h3>💧 Economize Água</h3>
+          <p>Feche bem as torneiras, tome banhos mais curtos e reutilize a água da chuva. Cada gota conta para a preservação deste recurso vital.</p>
+        </article>
+        <article class="dica-eco">
+          <h3>💡 Consuma Energia Consciente</h3>
+          <p>Apague as luzes ao sair de um cômodo, utilize lâmpadas de baixo consumo e retire aparelhos da tomada quando não estiverem em uso.</p>
+        </article>
+        <article class="dica-eco">
+          <h3>🛍️ Menos Plástico, Mais Planeta</h3>
+          <p>Opte por sacolas reutilizáveis, evite produtos com excesso de embalagens plásticas e procure alternativas duráveis e biodegradáveis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="lixeiras-reciclagem">
+      <h2>Lixeiras da Coleta Seletiva</h2>
+      <p class="instrucao-lixeiras">Passe o mouse sobre as lixeiras para descobrir o que descartar em cada uma!</p>
+      <div class="lixeiras-container">
+        <div class="lixeira lixeira-azul">
+          <span>PAPEL</span>
+          <div class="tooltip-text"><strong>Azul (Papel):</strong> Jornais, revistas, papéis de escritório, caixas de papelão, embalagens de papel limpas. ❌ Evite: Papel sujo/engordurado, carbono, metalizado, fotografias, fitas adesivas.</div>
+        </div>
+        <div class="lixeira lixeira-vermelha">
+          <span>PLÁSTICO</span>
+          <div class="tooltip-text"><strong>Vermelho (Plástico):</strong> Garrafas PET, embalagens de produtos de limpeza e higiene, potes, sacos plásticos limpos, brinquedos de plástico. ❌ Evite: Plásticos tipo celofane, embalagens com resíduos, tomadas.</div>
+        </div>
+        <div class="lixeira lixeira-verde">
+          <span>VIDRO</span>
+          <div class="tooltip-text"><strong>Verde (Vidro):</strong> Garrafas de bebidas, potes de alimentos, frascos de perfumes e cosméticos, cacos de vidro (embalados com segurança). ❌ Evite: Espelhos, vidros de janela, lâmpadas, cerâmicas, porcelanas.</div>
+        </div>
+        <div class="lixeira lixeira-amarela">
+          <span>METAL</span>
+          <div class="tooltip-text"><strong>Amarelo (Metal):</strong> Latas de alumínio (refrigerante, cerveja), latas de aço (conservas, óleo), pregos, parafusos, arames, tampinhas de metal. ❌ Evite: Clipes, esponjas de aço, aerossóis.</div>
+        </div>
+        <div class="lixeira lixeira-marrom">
+          <span>ORGÂNICO</span>
+          <div class="tooltip-text"><strong>Marrom (Orgânico):</strong> Restos de frutas, verduras, legumes, borra de café, cascas de ovos, restos de alimentos (sem ossos grandes ou muita gordura). Ideal para compostagem!</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌱 Projeto EcoFG </p>
+  </footer>
+
+  <script src="js/principal.js"></script>
+</body>
+</html>

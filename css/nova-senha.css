@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0; /* Adicionado para consistência */
+  box-sizing: border-box; /* Adicionado para consistência */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.box h2 { /* Estilo adicionado para o título */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #1f513f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Ocupa toda a largura do container */
+  margin-top: 10px;
+  transition: background-color 0.3s; /* Adicionada transição */
+}
+
+button:hover {
+  background-color: #145135;
+}
+
+.erro {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: left; /* Alinha o texto do erro à esquerda */
+}

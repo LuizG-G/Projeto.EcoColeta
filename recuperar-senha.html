@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperar Senha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/recuperar-senha.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Recuperar Senha</h2>
+
+    <div id="emailBox">
+      <p>Digite seu e-mail:</p>
+      <input type="email" id="email" placeholder="Seu e-mail">
+      <button onclick="enviarCodigo()">Enviar Código</button>
+    </div>
+
+    <div id="codigoBox">
+      <p>Digite o código enviado:</p>
+      <input type="text" id="codigo" placeholder="Código de 6 dígitos">
+      <button onclick="validarCodigo()">Confirmar</button>
+    </div>
+  </div>
+
+  <script src="js/recuperar-senha.js"></script>
+</body>
+</html>
