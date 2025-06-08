@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depósito de Materiais</title>
+  <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="css/deposito.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div id="score-usuario">Carregando score...</div>
+    <div class="deposito-container" id="deposito-container">
+      <h2>Depósito de Materiais</h2>
+      <form id="form-deposito">
+        <label for="categoria">Selecione a Categoria do Material:</label>
+        <select id="categoria" required>
+          <option value="">Selecione a categoria</option>
+          <option value="Papel">Papel</option>
+          <option value="Plástico">Plástico</option>
+          <option value="Metal">Metal</option>
+          <option value="Vidro">Vidro</option>
+          <option value="Vidro">Orgânico</option>
+        </select>
+        <div id="station-group">
+          <label for="station">Selecione a Estação de Depósito:</label>
+          <select id="station" required>
+            <option value="">Selecione uma estação</option>
+          </select>
+        </div>
+        <div id="weight-group" style="display:none;">
+          <label for="weight">Peso (kg):</label>
+          <input type="number" id="weight" min="0.01" step="0.01" placeholder="Ex: 1.5" required />
+        </div>
+        <button type="submit">Gerar Código de Depósito</button>
+      </form>
+      <div id="codigo-ficticio" class="codigo-ficticio" style="display:none;"></div>
+      <div id="loading" class="loading" style="display:none;">Depositando...</div>
+      <div id="deposito-sucesso" class="deposito-sucesso" style="display:none;"></div>
+      <button id="novo-deposito" style="display:none; margin-top:18px;">Novo Depósito</button>
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/deposito.js"></script>
+</body>
+</html>

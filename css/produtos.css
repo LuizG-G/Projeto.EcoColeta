@@ -1,0 +1,60 @@
+/* Estilos específicos da página de produtos */
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 32px;
+}
+.produto-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 24px 18px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.produto-card h3 {
+  margin: 0 0 6px 0;
+  color: #1b5e20;
+}
+.produto-card p {
+  margin: 0 0 4px 0;
+  color: #2e7d32;
+  font-size: 1em;
+}
+.produto-card .preco {
+  font-weight: bold;
+  color: #388e3c;
+}
+.produto-card .estoque {
+  font-size: 0.95em;
+  color: #888;
+}
+.produto-card button {
+  margin-top: 10px;
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.produto-card button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: grayscale(0.5);
+}
+#score-usuario {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #1b5e20;
+  margin: 24px 0 0 0;
+  text-align: center;
+}

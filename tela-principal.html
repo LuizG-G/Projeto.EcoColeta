@@ -7,31 +7,22 @@
   <link rel="stylesheet" href="css/principal.css">
 </head>
 <body>
-  <header>
-    <h1>🌿 Projeto Eco FG</h1>
-    <nav>
-      <a href="login.html">Login</a> <a href="cadastro.html">Cadastro</a> <a href="#reciclagem">Calculadora</a>
-      <a href="#info-ecologica">Dicas Eco</a>
-      <a href="#lixeiras-reciclagem">Coleta Seletiva</a>
-    </nav>
-  </header>
-
+  <div id="header-container"></div>
   <main>
     <section id="reciclagem">
       <h2>Calcule sua Reciclagem</h2>
       <form onsubmit="calcularValor(); return false;">
         <label for="material">Tipo de material:</label>
         <select id="material">
+          <option value="papel">Papel</option>
           <option value="plastico">Plástico</option>
-          <option value="vidro">Vidro</option>
           <option value="metal">Metal</option>
-          <option value="papelao">Papelão</option>
-          <option value="cobre">Cobre</option>
-          <option value="biodegradavel">Biodegradável</option>
+          <option value="vidro">Vidro</option>
+          <option value="organico">Orgânico</option>
         </select>
 
         <label for="quantidade">Quantidade (kg):</label>
-        <input type="number" id="quantidade" min="0.1" step="0.1" placeholder="Ex: 2.5" required>
+        <input type="number" id="quantidade" min="0.1" step="0.1" placeholder="Ex: 2.5" required pattern="[0-9]*" inputmode="decimal" oninput="this.value = this.value.replace(/[^\d.,]/g, '').replace(/(\..*)\./g, '$1');">
 
         <button type="submit">Calcular</button>
       </form>
@@ -92,6 +83,52 @@
     <p>🌱 Projeto EcoFG </p>
   </footer>
 
+  <script src="js/header.js"></script>
   <script src="js/principal.js"></script>
+  <script>
+    const emailLogado = localStorage.getItem("usuarioEmail");
+    if (emailLogado) {
+      document.querySelector('.menu-login').style.display = 'none';
+      document.querySelector('.menu-cadastro').style.display = 'none';
+      const usuarioTopo = document.getElementById('usuario-logado-topo');
+      usuarioTopo.style.display = 'block';
+      usuarioTopo.innerHTML = `👤 ${emailLogado} <span id='icon-logoff' title='Sair' style='cursor:pointer; margin-left:8px; color:#c62828; font-size:1.2em; vertical-align:middle;'>🚪</span>`;
+      document.getElementById('icon-logoff').onclick = function() {
+        localStorage.removeItem('usuarioLogado');
+        localStorage.removeItem('usuarioEmail');
+        localStorage.removeItem('accessToken');
+        window.location.href = 'login.html';
+      };
+    }
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIcon = document.getElementById('menu-icon');
+    const menuNav = document.getElementById('menu-navegacao');
+    let menuAberto = false;
+    function alternarMenu() {
+      menuAberto = !menuAberto;
+      menuNav.style.display = menuAberto ? 'flex' : 'none';
+    }
+    menuToggle.addEventListener('click', alternarMenu);
+    menuIcon.addEventListener('click', alternarMenu);
+    menuNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 800) {
+          menuNav.style.display = 'none';
+          menuAberto = false;
+        }
+      });
+    });
+    function ajustarMenuPorTamanho() {
+      if (window.innerWidth >= 800) {
+        menuNav.style.display = 'flex';
+        menuIcon.style.display = 'none';
+      } else {
+        menuIcon.style.display = 'inline-block';
+        if (!menuAberto) menuNav.style.display = 'none';
+      }
+    }
+    window.addEventListener('resize', ajustarMenuPorTamanho);
+    ajustarMenuPorTamanho();
+  </script>
 </body>
 </html>

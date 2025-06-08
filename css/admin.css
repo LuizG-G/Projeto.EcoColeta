@@ -1,0 +1,175 @@
+/* Estilos para o painel do administrador */
+.admin-container {
+  max-width: 1200px;
+  margin: 36px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 32px 24px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.admin-container h2 {
+  text-align: center;
+  color: #1b5e20;
+  margin-bottom: 10px;
+}
+.admin-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+}
+.admin-section {
+  flex: 1 1 480px;
+  min-width: 340px;
+  background: #e8f5e9;
+  border-radius: 8px;
+  padding: 24px 18px 18px 18px;
+  box-shadow: 0 1px 6px #0001;
+  margin-bottom: 16px;
+}
+.admin-section h3 {
+  color: #388e3c;
+  margin-top: 0;
+}
+.admin-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.admin-section form input,
+.admin-section form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.admin-section form button {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.admin-section form button:hover {
+  background: #2e7d32;
+}
+.datatable-container {
+  overflow-x: auto;
+}
+.datatable-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 8px;
+}
+.datatable-container th, .datatable-container td {
+  border: 1px solid #b2dfdb;
+  padding: 8px 10px;
+  text-align: left;
+}
+.datatable-container th {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+.datatable-container tr:nth-child(even) {
+  background: #f9f9f9;
+}
+.datatable-container td:last-child {
+  text-align: center;
+}
+.admin-switch-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.admin-switch-btn {
+  background: #e0f2f1;
+  color: #1b5e20;
+  border: 2px solid #26a69a;
+  border-radius: 24px;
+  padding: 10px 32px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.admin-switch-btn-active,
+.admin-switch-btn:hover {
+  background: #26a69a;
+  color: #fff;
+  border-color: #1b5e20;
+}
+.btn-excluir-ds, .btn-excluir-item {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 18px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px #0002;
+  margin: 0 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-excluir-ds:hover, .btn-excluir-item:hover {
+  background: #b71c1c;
+  box-shadow: 0 4px 12px #0003;
+}
+.btn-excluir-ds::before, .btn-excluir-item::before {
+  content: '\1F5D1'; /* Unicode lixeira */
+  font-size: 1.1em;
+  margin-right: 4px;
+}
+@media (max-width: 900px) {
+  .admin-sections {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .datatable-container table,
+  .datatable-container thead,
+  .datatable-container tbody,
+  .datatable-container tr,
+  .datatable-container th,
+  .datatable-container td {
+    display: none !important;
+  }
+  .admin-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 8px;
+  }
+  .admin-card {
+    background: #e8f5e9;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px #0001;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1.05em;
+    position: relative;
+  }
+  .admin-card button.btn-excluir-ds,
+  .admin-card button.btn-excluir-item {
+    align-self: flex-end;
+    margin-top: 8px;
+    min-width: 110px;
+  }
+}

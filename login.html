@@ -28,5 +28,36 @@
   </div>
 
   <script src="js/login.js"></script>
+  <script>
+    const form = document.getElementById("login-form");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      try {
+        const response = await fetch("URL_DO_SEU_SERVIDOR", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, senha }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          window.location.href = "pagina-principal.html";
+        } else {
+          document.getElementById("mensagem-erro").innerText = data.message;
+        }
+      } catch (error) {
+        console.error("Erro:", error);
+        document.getElementById("mensagem-erro").innerText = "Ocorreu um erro. Tente novamente.";
+      }
+    });
+  </script>
 </body>
 </html>
