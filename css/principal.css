@@ -1,4 +1,8 @@
 /* Estilos Gerais */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -6,6 +10,9 @@ body {
   background: #f0f7f0;
   color: #2e7d32;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 *, *:before, *:after {
@@ -47,9 +54,32 @@ nav a:hover, nav a:focus {
   color: #fff;
 }
 
+#menu-navegacao {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (min-width: 800px) {
+  #menu-navegacao {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+  #menu-icon {
+    display: none !important;
+  }
+}
+
 /* Conteúdo Principal e Seções */
 main {
+  flex: 1 0 auto;
   padding-top: 20px; /* Espaço para o header fixo não cobrir o topo da primeira seção */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 section {
@@ -180,6 +210,10 @@ section h2 {
 /* Seção de Informações Ecológicas */
 #info-ecologica {
   background-color: #e0f2f1;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
 }
 
 #info-ecologica h2 {
@@ -214,6 +248,10 @@ section h2 {
 /* Seção Lixeiras de Reciclagem */
 #lixeiras-reciclagem {
   background-color: #f0f4c3;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
 }
 #lixeiras-reciclagem h2 {
   color: #556b2f;
@@ -301,8 +339,9 @@ footer {
   padding: 1.5em;
   color: #1b5e20;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 24px;
   border-top: 3px solid #81c784;
+  flex-shrink: 0;
 }
 
 /* Media Queries para Responsividade */

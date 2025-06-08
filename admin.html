@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Administrador</title>
+  <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="admin-container">
+      <h2>Painel do Administrador</h2>
+      <div class="admin-sections">
+        <section class="admin-section">
+          <h3>Cadastrar Nova Estação de Depósito</h3>
+          <form id="form-deposit-station">
+            <input type="text" id="ds-name" placeholder="Nome" required>
+            <input type="text" id="ds-description" placeholder="Descrição">
+            <input type="text" id="ds-latitude" placeholder="Latitude" required>
+            <input type="text" id="ds-longitude" placeholder="Longitude" required>
+            <select id="ds-category" required>
+              <option value="">Categoria</option>
+              <option value="Papel">Papel</option>
+              <option value="Plástico">Plástico</option>
+              <option value="Metal">Metal</option>
+              <option value="Vidro">Vidro</option>
+              <option value="Orgânico">Orgânico</option>
+              <option value="Todos">Todos</option>
+            </select>
+            <input type="text" id="ds-address" placeholder="Endereço">
+            <button type="submit">Cadastrar Estação</button>
+          </form>
+          <div class="datatable-container">
+            <h4>Estações de Depósito Existentes</h4>
+            <table id="table-deposit-stations">
+              <thead>
+                <tr>
+                  <th>ID</th><th>Nome</th><th>Categoria</th><th>Latitude</th><th>Longitude</th><th>Status</th><th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="admin-section">
+          <h3>Cadastrar Novo Produto</h3>
+          <form id="form-item">
+            <input type="text" id="item-name" placeholder="Nome" required>
+            <input type="text" id="item-description" placeholder="Descrição">
+            <input type="number" id="item-price" placeholder="Preço (pontos)" required>
+            <input type="number" id="item-stock" placeholder="Estoque" required>
+            <label><input type="checkbox" id="item-trade-enabled" checked> Disponível para Troca</label>
+            <button type="submit">Cadastrar Produto</button>
+          </form>
+          <div class="datatable-container">
+            <h4>Produtos Existentes</h4>
+            <table id="table-items">
+              <thead>
+                <tr>
+                  <th>ID</th><th>Nome</th><th>Preço</th><th>Estoque</th><th>Disponível</th><th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* Estilos específicos da página de histórico */
+.historico-container {
+  max-width: 900px;
+  margin: 36px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 32px 24px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: stretch;
+}
+.historico-container h2 {
+  text-align: center;
+  color: #1b5e20;
+  margin-bottom: 10px;
+}
+.historico-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.historico-card {
+  background: #e8f5e9;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px #0001;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.historico-card .tipo {
+  font-weight: bold;
+  color: #388e3c;
+  font-size: 1.1em;
+}
+.historico-card .data {
+  color: #888;
+  font-size: 0.95em;
+}
+.historico-card .descricao {
+  color: #1b5e20;
+  font-size: 1em;
+}
+.historico-card .valor {
+  color: #2e7d32;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+.historico-vazio {
+  text-align: center;
+  color: #888;
+  font-size: 1.1em;
+  margin-top: 24px;
+}
